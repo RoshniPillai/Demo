@@ -7,7 +7,7 @@ import { Box, Link, Button, Drawer, Typography, Avatar, Stack } from '@mui/mater
 // mocks_
 import account from '../../_mocks_/account';
 // hooks
-import useResponsive from '../../hooks/useResponsive';
+//import useResponsive from '../../hooks/useResponsive';
 // components
 import Logo from '../../components/Logo';
 import Scrollbar from '../../components/Scrollbar';
@@ -44,7 +44,7 @@ DashboardSidebar.propTypes = {
 export default function DashboardSidebar({ isOpenSidebar, onCloseSidebar }) {
   const { pathname } = useLocation();
 
-  const isDesktop = useResponsive('up', 'lg');
+  //const isDesktop = useResponsive('up', 'lg');
 
   useEffect(() => {
     if (isOpenSidebar) {
