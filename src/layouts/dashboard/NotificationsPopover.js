@@ -1,6 +1,6 @@
 import { faker } from '@faker-js/faker';
 import PropTypes from 'prop-types';
-//import { noCase } from 'change-case';
+import { noCase } from 'change-case';
 import { useRef, useState } from 'react';
 import { Link as RouterLink } from 'react-router-dom';
 import { set, sub, formatDistanceToNow } from 'date-fns';
@@ -83,7 +83,7 @@ function renderContent(notification) {
     <Typography variant="subtitle2">
       {notification.title}
       <Typography component="span" variant="body2" sx={{ color: 'text.secondary' }}>
-      
+        &nbsp; {noCase(notification.description)}
       </Typography>
     </Typography>
   );
