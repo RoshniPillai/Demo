@@ -1,5 +1,5 @@
 import { filter } from 'lodash';
-import { sentenceCase } from 'change-case';
+//import { sentenceCase } from 'change-case';
 import { useState } from 'react';
 import { Link as RouterLink } from 'react-router-dom';
 // material
@@ -204,7 +204,7 @@ export default function User() {
                               variant="ghost"
                               color={(status === 'banned' && 'error') || 'success'}
                             >
-                              {sentenceCase(status)}
+                              {status}
                             </Label>
                           </TableCell>
 
