@@ -15,7 +15,7 @@ import {
 // mocks_
 import account from "../../_mocks_/account";
 // hooks
-//import useResponsive from '../../hooks/useResponsive';
+import useResponsive from "../../hooks/useResponsive";
 // components
 import Logo from "../../components/Logo";
 import Scrollbar from "../../components/Scrollbar";
@@ -52,7 +52,7 @@ DashboardSidebar.propTypes = {
 export default function DashboardSidebar({ isOpenSidebar, onCloseSidebar }) {
   const { pathname } = useLocation();
 
-  //const isDesktop = useResponsive('up', 'lg');
+  const isDesktop = useResponsive("up", "lg");
 
   useEffect(() => {
     if (isOpenSidebar) {
@@ -131,21 +131,33 @@ export default function DashboardSidebar({ isOpenSidebar, onCloseSidebar }) {
 
   return (
     <RootStyle>
-      {/* {isDesktop && ( */}
-      <Drawer
-        open
-        variant="persistent"
-        PaperProps={{
-          sx: {
-            width: DRAWER_WIDTH,
-            bgcolor: "background.default",
-            borderRightStyle: "dashed"
-          }
-        }}
-      >
-        {renderContent}
-      </Drawer>
-      {/* )} */}
+      {!isDesktop && (
+        <Drawer
+          open={isOpenSidebar}
+          onClose={onCloseSidebar}
+          PaperProps={{
+            sx: { width: DRAWER_WIDTH }
+          }}
+        >
+          {renderContent}
+        </Drawer>
+      )}
+
+      {isDesktop && (
+        <Drawer
+          open
+          variant="persistent"
+          PaperProps={{
+            sx: {
+              width: DRAWER_WIDTH,
+              bgcolor: "background.default",
+              borderRightStyle: "dashed"
+            }
+          }}
+        >
+          {renderContent}
+        </Drawer>
+      )}
     </RootStyle>
   );
 }
