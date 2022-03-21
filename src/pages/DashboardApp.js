@@ -1,9 +1,8 @@
 // material
-import { Box, Grid, Container, Typography } from '@mui/material';
+import { Box, Grid, Container, Typography } from "@mui/material";
 // components
-import Page from '../components/Page';
+import Page from "../components/Page";
 import {
-  AppTasks,
   AppNewUsers,
   AppBugReports,
   AppItemOrders,
@@ -15,13 +14,13 @@ import {
   AppTrafficBySite,
   AppCurrentSubject,
   AppConversionRates
-} from '../sections/@dashboard/app';
+} from "../sections/@dashboard/app";
 
 // ----------------------------------------------------------------------
 
 export default function DashboardApp() {
   return (
-    <Page title="Dashboard | Minimal-UI">
+    <Page title="Dashboard">
       <Container maxWidth="xl">
         <Box sx={{ pb: 5 }}>
           <Typography variant="h4">Hi, Welcome back</Typography>
@@ -66,10 +65,6 @@ export default function DashboardApp() {
 
           <Grid item xs={12} md={6} lg={4}>
             <AppTrafficBySite />
-          </Grid>
-
-          <Grid item xs={12} md={6} lg={8}>
-            <AppTasks />
           </Grid>
         </Grid>
       </Container>
